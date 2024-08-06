@@ -1,0 +1,7 @@
+{
+  "name": "FoodFusionV2.3",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
