@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="login-content">
+  <!-- Imagen de fondo -->
+  <img src="../../assets/prueba.png" class="background-image" alt="Background Image" />
+
+  <!-- Superposición oscura -->
+  <div class="overlay"></div>
+
+  <!-- Contenido centrado sobre la imagen de fondo -->
+  <div class="content-overlay">
+    <img src="../../assets/logo.png" class="logo" alt="Logo" />
+
+    <div class="title">
+      <h4>Login</h4>
+      <p>Let's get started</p>
+    </div>
+
+    <form (ngSubmit)="loginUser($event)" #loginForm="ngForm">
+      <ion-input placeholder="Username" class="primary-input" [(ngModel)]="email" name="email" required></ion-input>
+      <ion-input placeholder="Password" type="password" class="primary-input" [(ngModel)]="password" name="password" required></ion-input>
+    
+      <div class="ion-margin-top ion-text-right forget">
+        <a>Has olvidado tu contraseña?</a>
+      </div>
+    
+      <div class="ion-margin-top">
+        <ion-button expand="block" color="primary" type="submit">Iniciar Sesión</ion-button>
+      </div>
+    </form>
+
+    <div class="ion-margin-top ion-text-center">
+      <a (click)="dismiss()">Cerrar</a>
+    </div>
+  </div>
+</ion-content>

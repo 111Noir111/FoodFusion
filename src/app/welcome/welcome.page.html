@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>Welcome</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="welcome-content">
+    <!-- Imagen de fondo -->
+    <img src="../../assets/prueba.png" class="background-image" alt="Background Image" />
+  
+    <!-- Capa de superposición -->
+    <div class="overlay"></div>
+  
+    <!-- Contenido centrado sobre la imagen de fondo -->
+    <div class="content-overlay">
+      <img src="../../assets/logo.png" class="logo" />
+  
+      <div class="title">
+        <h2>Bienvenido</h2>
+        <p>Disfruta de FoodFusion</p>
+      </div>
+  
+      <div class="ion-margin-top">
+        <ion-button expand="block" (click)="login()" >Iniciar Sesion</ion-button>
+        <ion-button expand="block" (click)="register()" fill="outline" >REGiSTRARSE</ion-button>
+      </div>
+    </div>
+  </ion-content>
+  

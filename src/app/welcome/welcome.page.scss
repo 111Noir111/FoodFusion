@@ -1,0 +1,89 @@
+ion-toolbar {
+
+  display: flex;
+  justify-content: center; /* Centra el contenido horizontalmente */
+}
+
+ion-title {
+  text-align: center; /* Asegura que el texto dentro del título esté centrado */
+}
+
+.welcome-content {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2; /* La imagen de fondo queda detrás de la superposición y el contenido */
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Color negro con opacidad para oscurecer */
+    backdrop-filter: blur(1px); /* Desenfoque */
+    z-index: -1; /* La superposición queda entre la imagen de fondo y el contenido */
+  }
+  
+  .content-overlay {
+    text-align: center;
+    color: white; /* Asegúrate de que el texto sea visible sobre la superposición */
+    z-index: 1; /* Asegura que el contenido esté sobre la superposición */
+    padding: 0 20px; /* Añade algo de padding para el contenido */
+  }
+  
+  .logo {
+    width: 60%;
+    margin-bottom: 20px;
+  }
+  
+  .title {
+    margin-bottom: 20px;
+  }
+  
+  .title h4 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin: 0;
+  }
+  
+  .title p {
+    font-size: 1rem;
+    margin-top: 10px;
+    color: #cccccc;
+  }
+  
+  ion-button {
+    --border-radius: 20px;
+    --padding-start: 20px;
+    --padding-end: 20px;
+    --padding-top: 15px;
+    --padding-bottom: 15px;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  ion-button[color="primary"] {
+    --background: #2c92ff;
+    --color: white;
+  }
+  
+  ion-button[fill="outline"] {
+    --border-color: #2c92ff;
+    --color: #ffffff;
+  }
+  
+  
