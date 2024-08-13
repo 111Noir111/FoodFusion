@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { HomePageRoutingModule } from './home-routing.module';
+import { HomeRoutingModule } from './home-routing.module'; // Usa el nombre correcto aquí
 import { HomePage } from './home.page';
 
 @NgModule({
@@ -10,7 +10,7 @@ import { HomePage } from './home.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomeRoutingModule // Asegúrate de usar el nombre correcto aquí
   ],
   declarations: [HomePage]
 })

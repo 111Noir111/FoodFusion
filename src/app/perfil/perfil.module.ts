@@ -2,18 +2,16 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { LoginPageRoutingModule } from './login-routing.module';
-import { LoginPage } from './login.page';
+import { PerfilPage } from './perfil.page';
+import { PerfilRoutingModule } from './perfil-routing.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    LoginPageRoutingModule
+    PerfilRoutingModule
   ],
-  declarations: [LoginPage]
+  declarations: [PerfilPage]
 })
-export class LoginPageModule {}
-
-
+export class PerfilModule {}

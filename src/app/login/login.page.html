@@ -21,17 +21,33 @@
     </div>
 
     <form (ngSubmit)="loginUser($event)" #loginForm="ngForm">
-      <ion-input placeholder="Username" class="primary-input" [(ngModel)]="email" name="email" required></ion-input>
-      <ion-input placeholder="Password" type="password" class="primary-input" [(ngModel)]="password" name="password" required></ion-input>
+      <div class="input-wrapper">
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input [(ngModel)]="email" name="email" type="email" required></ion-input>
+        </ion-item>
+      </div>
+      <div class="input-wrapper">
+        <ion-item>
+          <ion-label position="floating">Password</ion-label>
+          <ion-input [(ngModel)]="password" name="password" type="password" required></ion-input>
+        </ion-item>
+      </div>
+    
+      <!-- Mensaje de error -->
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
     
       <div class="ion-margin-top ion-text-right forget">
         <a>Has olvidado tu contraseña?</a>
       </div>
-    
+      
       <div class="ion-margin-top">
         <ion-button expand="block" color="primary" type="submit">Iniciar Sesión</ion-button>
       </div>
     </form>
+    
 
     <div class="ion-margin-top ion-text-center">
       <a (click)="dismiss()">Cerrar</a>

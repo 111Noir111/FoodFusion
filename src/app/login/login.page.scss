@@ -1,138 +1,141 @@
+/* Estilo general del contenedor de login */
 .login-content {
-    position: relative;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-  
-  .background-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -2; /* La imagen de fondo queda detrás de la superposición y el contenido */
-  }
-  
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Color negro con opacidad para oscurecer */
-    backdrop-filter: blur(4px); /* Desenfoque más fuerte para el fondo */
-    z-index: -1; /* La superposición queda entre la imagen de fondo y el contenido */
-  }
-  
-  .content-overlay {
-    text-align: center;
-    color: white; /* Asegúrate de que el texto sea visible sobre la superposición */
-    z-index: 1; /* Asegura que el contenido esté sobre la superposición */
-    padding: 0 20px; /* Añade algo de padding para el contenido */
-  }
-  
-  .logo {
-    width: 60%;
-    margin-bottom: 20px;
-  }
-  
-  .title {
-    margin-bottom: 20px;
-  }
-  
-  .title h4 {
-    font-size: 2rem;
-    color: #ffffff;
-    margin: 0;
-  }
-  
-  .title p {
-    font-size: 1rem;
-    margin-top: 10px;
-    color: #cccccc;
-  }
-
-  .login-content {
-    position: relative;
-    height: 100%; /* Ajusta la altura al 100% del contenedor padre */
-    display: flex;
-    flex-direction: column; /* Cambia a columna para mejor control del contenido */
-    align-items: center;
-    justify-content: center;
-    overflow: hidden; /* Evita el scroll */
-  }
-
-  ion-content {
-    --padding: 0; /* Elimina el padding predeterminado */
-    height: 100vh; /* Asegura que el contenido ocupe toda la altura visible */
-    overflow: hidden; /* Evita el scroll */
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centra el contenido verticalmente */
-  }
-  
-  /* Estilo para los inputs */
-.primary-input {
-    margin-bottom: 20px;
-    --background: rgba(255, 255, 255, 0.2); /* Fondo semi-transparente para los inputs */
-    --placeholder-color: #dcdcdc; /* Color del texto del placeholder */
-    --border-radius: 12px; /* Bordes redondeados */
-    --padding-start: 16px;
-    --padding-end: 16px;
-    --padding-top: 12px;
-    --padding-bottom: 12px;
-    --border-width: 2px; /* Borde más grueso para un mejor enfoque visual */
-    --border-color: #ffffff; /* Color del borde */
-    --color: #ffffff; /* Color del texto */
-    font-size: 1rem;
-    font-weight: normal;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra suave */
-    transition: all 0.3s ease; /* Transición suave para los cambios de estilo */
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
-.primary-input:hover {
-    --border-color: #2c92ff; /* Color del borde cuando el input está en hover */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); /* Sombra más prominente al pasar el mouse */
+/* Imagen de fondo */
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2; /* Detrás de la superposición y el contenido */
 }
 
-.primary-input:focus {
-    --border-color: #2c92ff; /* Color del borde cuando el input está en foco */
-    box-shadow: 0 0 8px rgba(44, 146, 255, 0.5); /* Sombra cuando el input está en foco */
-    background: rgba(255, 255, 255, 0.3); /* Fondo más claro al enfocar */
+/* Superposición oscura */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Fondo oscuro */
+  backdrop-filter: blur(4px); /* Desenfoque */
+  z-index: -1; /* Entre la imagen de fondo y el contenido */
 }
 
-  
-  ion-button {
-    --border-radius: 20px;
-    --padding-start: 20px;
-    --padding-end: 20px;
-    --padding-top: 15px;
-    --padding-bottom: 15px;
-    font-size: 1rem;
-    font-weight: bold;
-  }
-  
-  ion-button[color="primary"] {
-    --background: #2c92ff;
-    --color: white;
-  }
-  
-  ion-button[fill="outline"] {
-    --border-color: #2c92ff;
-    --color: #2c92ff;
-  }
+/* Contenido centrado sobre la imagen de fondo */
+.content-overlay {
+  text-align: center;
+  color: white; /* Texto blanco para visibilidad */
+  z-index: 1; /* Por encima de la superposición */
+  padding: 20px; /* Espaciado interno */
+  width: 100%;
+  max-width: 500px; /* Ancho máximo para el contenido */
+}
 
-  .forget a {
-    font-size: 0.9rem;
-    color: #ffffff;
-  }
-  
-  .ion-text-center a {
-    color: #ffffff;
-    text-decoration: underline;
-  }
-  
+/* Logo */
+.logo {
+  width: 60%;
+  margin-bottom: 20px;
+}
+
+/* Título */
+.title {
+  margin-bottom: 20px;
+}
+
+.title h4 {
+  font-size: 2rem;
+  color: #ffffff;
+  margin: 0;
+}
+
+.title p {
+  font-size: 1rem;
+  margin-top: 10px;
+  color: #cccccc;
+}
+
+/* Contenedor para inputs y botones */
+.input-wrapper, .button-wrapper {
+  width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+  max-width: 500px; /* Ajusta según sea necesario */
+  margin-bottom: 20px;
+}
+
+/* Estilo para los items de entrada */
+ion-item {
+  --padding-start: 0;
+  --padding-end: 0;
+  --border-radius: 12px;
+  --background: transparent; /* Fondo transparente para ion-item */
+  --border-color: transparent; /* Quita el borde */
+  --box-shadow: none; /* Quita la sombra */
+  margin-bottom: 0; /* Alinea el borde inferior del input */
+}
+
+/* Estilo para los inputs */
+ion-input {
+  --background: rgba(255, 255, 255, 0.3); /* Fondo más claro para los inputs */
+  --color: #ffffff; /* Color del texto */
+  --border: none; /* Sin borde */
+  --padding-start: 20px;
+  --padding-end: 20px;
+  --padding-top: 15px;
+  --padding-bottom: 15px;
+  box-shadow: none; /* Sin sombra */
+  width: 100%; /* Asegura que el input ocupe todo el ancho del contenedor */
+  max-width: 500px; /* Asegura que el botón tenga un ancho máximo */
+}
+
+/* Botón de inicio de sesión */
+ion-button {
+  --border-radius: 20px;
+  --padding-start: 20px;
+  --padding-end: 20px;
+  --padding-top: 15px;
+  --padding-bottom: 15px;
+  font-size: 1rem;
+  font-weight: bold;
+  width: 100%; /* Hace que el botón ocupe todo el ancho del contenedor */
+  max-width: 500px; /* Asegura que el botón tenga un ancho máximo */
+}
+
+/* Botón primario */
+ion-button[color="primary"] {
+  --background: #2c92ff;
+  --color: white;
+}
+
+/* Botón de borde */
+ion-button[fill="outline"] {
+  --border-color: #2c92ff;
+  --color: #2c92ff;
+}
+
+/* Enlace de olvido de contraseña */
+.forget a {
+  font-size: 0.9rem;
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Enlace de cerrar */
+.ion-text-center a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.error-message {
+  color: #ff4d4d; /* Color rojo para el mensaje de error */
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}

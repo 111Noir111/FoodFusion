@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Personalizar Menú</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Sección para personalizar el menú -->
+  <section class="customize-menu">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Crea tu propio menú</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Añade las recetas que más te gusten a tu menú personal. Puedes buscar recetas y añadirlas a tu lista personalizada.</p>
+        <ion-button expand="full" color="primary">Añadir Recetas</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </section>
+
+  <!-- Sección para ver todas las comidas -->
+  <section class="view-all">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Comidas</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-label>Ver todas las comidas</ion-label>
+          <ion-button fill="clear" color="primary">Ver Todos</ion-button>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  </section>
+
+  <!-- Lista horizontal de comidas -->
+  <section class="saved-recipes">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Comidas Guardadas</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="horizontal-scroll">
+          <ion-list>
+            <ion-item  class="horizontal-item">
+              <ion-thumbnail slot="start">
+                <img>
+              </ion-thumbnail>
+              <ion-label>prueba</ion-label>
+              <ion-button slot="end">Eliminar</ion-button>
+            </ion-item>
+          </ion-list>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </section>
+</ion-content>

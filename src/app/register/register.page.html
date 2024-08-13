@@ -1,24 +1,81 @@
 <ion-header>
-
+  <ion-toolbar>
+    <ion-title>Registro</ion-title>
+  </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-  <div class="title">
-    <h4>Signup</h4>
-    <p>Register with Code Crafts to get started</p>
-  </div>
+<ion-content class="login-content">
+  <!-- Imagen de fondo y superposición -->
+  <img src="../../assets/prueba.png" class="background-image" alt="Background">
+  <div class="overlay"></div>
 
-  <ion-input placeholder="Full Name" class="primary-input"></ion-input>
-  <ion-input placeholder="Username" class="primary-input"></ion-input>
-  <ion-input placeholder="Password" type="password" class="primary-input"></ion-input>
+  <!-- Contenido centrado -->
+  <div class="content-overlay">
+    <!-- Título y subtítulo -->
+    <div class="title">
+      <h4>Regístrate</h4>
+      <p>Únete a FoodFusion para comenzar</p>
+    </div>
 
-  <p>By signing up you're agreed to our Terms & Conditions</p>
+    <!-- Formulario de registro -->
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <ion-item>
+        <ion-input 
+          formControlName="email" 
+          placeholder="Email" 
+          type="email" 
+          class="primary-input">
+        </ion-input>
+      </ion-item>
+      <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="error-message">
+        <p *ngIf="email?.errors?.['required']">El correo es obligatorio.</p>
+        <p *ngIf="email?.errors?.['email']">El formato del correo no es válido.</p>
+      </div>
 
-  <div class="ion-margin-top">
-    <ion-button expand="block" >SIGN UP</ion-button>
-  </div>
+      <ion-item>
+        <ion-input 
+          formControlName="password" 
+          placeholder="Contraseña" 
+          type="password" 
+          class="primary-input">
+        </ion-input>
+      </ion-item>
 
-  <div class="ion-margin-top ion-text-center">
-    <a >Close</a>
+      <!-- Mensaje de términos y condiciones -->
+      <p class="terms">
+        Al registrarte, aceptas nuestros <a href="#">Términos y Condiciones</a>.
+      </p>
+
+      <!-- Botón de registro -->
+      <div class="button-wrapper">
+        <ion-button 
+          expand="block" 
+          color="primary" 
+          [disabled]="registerForm.invalid">
+          REGISTRARSE
+        </ion-button>
+      </div>
+
+      <!-- Enlaces a redes sociales -->
+      <div class="social-media">
+        <p>O regístrate con:</p>
+        <ion-buttons>
+          <ion-button fill="clear">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </ion-button>
+          <ion-button fill="clear">
+            <ion-icon name="logo-google"></ion-icon>
+          </ion-button>
+          <ion-button fill="clear">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </div>
+
+      <!-- Enlace para cerrar -->
+      <div class="ion-margin-top ion-text-center">
+        <a (click)="dismiss()">Cerrar</a>
+      </div>
+    </form>
   </div>
 </ion-content>
