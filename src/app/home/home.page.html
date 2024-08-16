@@ -5,30 +5,32 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" class="background">
-  <!-- El contenido se coloca aquí -->
+  <!-- Imagen de fondo -->
   <section class="search">
     <ion-searchbar placeholder="Buscar ingredientes" debounce="0"></ion-searchbar>
   </section>
 
   <section class="recipes" *ngIf="recipe">
-    <ion-card>
+    <ion-card class="recipe-card">
       <ion-card-header>
         <ion-card-title>{{ recipe.strMeal }}</ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        <img [src]="recipe.strMealThumb" alt="{{ recipe.strMeal }}">
+        <img [src]="recipe.strMealThumb" alt="{{ recipe.strMeal }}" class="recipe-img">
         <p>{{ recipe.strInstructions }}</p>
         <ion-card-subtitle>Ingredientes:</ion-card-subtitle>
         <ul>
           <li *ngFor="let ingredient of getIngredients()">{{ ingredient }}</li>
         </ul>
-        <a [href]="recipe.strYoutube" target="_blank">Ver receta en YouTube</a>
+        <a [href]="recipe.strYoutube" target="_blank" class="youtube-link">
+          Ver receta en YouTube
+        </a>
       </ion-card-content>
     </ion-card>
   </section>
 
   <section class="recommended">
-    <ion-card>
+    <ion-card class="recommended-card">
       <ion-card-header>
         <ion-card-title>Comidas Recomendadas</ion-card-title>
       </ion-card-header>
