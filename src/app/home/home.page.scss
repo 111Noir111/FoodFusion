@@ -14,7 +14,16 @@
   z-index: 1;
 }
 
-.recipe-card, .recommended-card {
+/* Agrega un contenedor flex para alinear las secciones */
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* O una altura específica si prefieres */
+}
+
+/* Configura las secciones para ocupar el mismo espacio */
+.recipes, .recommended {
+  flex: 1; /* Esto hace que ambas secciones ocupen el mismo espacio disponible */
   margin: 1rem;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -22,11 +31,33 @@
   z-index: 1;
 }
 
+/* Ajusta la imagen dentro de las tarjetas */
+.recipe-card, .recommended-card {
+  margin: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.6); /* Fondo blanco con 60% de transparencia */
+  padding: 1rem;
+}
+
 .recipe-img, .recommended-img {
   width: 100%;
   border-radius: 10px;
   object-fit: cover;
   margin-bottom: 1rem;
+}
+
+ion-card-header {
+  background: rgba(56, 128, 255, 0.8); /* Fondo azul con 80% de transparencia */
+  color: #ffffff;
+  border-radius: 10px 10px 0 0;
+}
+
+ion-card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
 }
 
 .youtube-link {
@@ -59,21 +90,7 @@ li {
   margin-bottom: 0.5rem;
 }
 
-/* Estilos para el carrusel de recetas recomendadas */
-.recommended {
-  margin: 1rem;
-}
-
-ion-slides {
-  height: 100%;
-}
-
-ion-slide {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
+/* Ajusta las tarjetas recomendadas */
 ion-card {
   max-width: 90%;
   margin: auto;

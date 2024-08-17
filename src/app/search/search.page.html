@@ -1,0 +1,53 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Buscar Ingredientes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- Barra de búsqueda -->
+  <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="onSearch()" placeholder="Buscar ingredientes"></ion-searchbar>
+
+  <!-- Imágenes de ingredientes seleccionados -->
+  <ion-grid *ngIf="selectedIngredients.length > 0">
+    <ion-row>
+      <ion-col size="6" size-md="4" size-lg="3" *ngFor="let ingredient of selectedIngredients">
+        <ion-card>
+          <img [src]="ingredient.image" alt="{{ ingredient.name }}" />
+          <ion-card-header>
+            <ion-card-title>{{ ingredient.name }}</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- Lista de ingredientes -->
+  <ion-list *ngIf="ingredients.length > 0">
+    <ion-item *ngFor="let ingredient of ingredients" (click)="selectIngredient(ingredient)">
+      <ion-avatar slot="start">
+        <img [src]="ingredient.image" alt="{{ ingredient.name }}">
+      </ion-avatar>
+      <ion-label>{{ ingredient.name }}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <!-- Botón para buscar recetas -->
+  <ion-button (click)="searchRecipes()" expand="full">Buscar Recetas</ion-button>
+
+  <!-- Lista de recetas -->
+  <ion-list *ngIf="recipes.length > 0">
+    <ion-item *ngFor="let recipe of recipes">
+      <ion-avatar slot="start">
+        <img [src]="recipe.strMealThumb" alt="{{ recipe.strMeal }}">
+      </ion-avatar>
+      <ion-label>
+        <h2>{{ recipe.strMeal }}</h2>
+        <p>{{ recipe.strInstructions }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <!-- Botón para volver a Home -->
+  <ion-button (click)="goHome()" expand="full" color="primary">Volver a Home</ion-button>
+</ion-content>

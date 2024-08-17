@@ -7,36 +7,49 @@
 <ion-content [fullscreen]="true" class="background">
   <!-- Imagen de fondo -->
   <section class="search">
-    <ion-searchbar placeholder="Buscar ingredientes" debounce="0"></ion-searchbar>
+    <ion-searchbar (ionInput)="onSearch($event)" placeholder="Buscar ingredientes" debounce="0"></ion-searchbar>
   </section>
 
-  <section class="recipes" *ngIf="recipe">
-    <ion-card class="recipe-card">
-      <ion-card-header>
-        <ion-card-title>{{ recipe.strMeal }}</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <img [src]="recipe.strMealThumb" alt="{{ recipe.strMeal }}" class="recipe-img">
-        <p>{{ recipe.strInstructions }}</p>
-        <ion-card-subtitle>Ingredientes:</ion-card-subtitle>
-        <ul>
-          <li *ngFor="let ingredient of getIngredients()">{{ ingredient }}</li>
-        </ul>
-        <a [href]="recipe.strYoutube" target="_blank" class="youtube-link">
-          Ver receta en YouTube
-        </a>
-      </ion-card-content>
-    </ion-card>
-  </section>
+  <div class="container">
+    <section class="recipes" *ngIf="recipe">
+      <ion-card class="recipe-card">
+        <ion-card-header>
+          <ion-card-title>{{ recipe.strMeal }}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <img [src]="recipe.strMealThumb" alt="{{ recipe.strMeal }}" class="recipe-img">
+          <p>{{ recipe.strInstructions }}</p>
+          <ion-card-subtitle>Ingredientes:</ion-card-subtitle>
+          <ul>
+            <li *ngFor="let ingredient of getIngredients()">{{ ingredient }}</li>
+          </ul>
+          <a [href]="recipe.strYoutube" target="_blank" class="youtube-link">
+            Ver receta en YouTube
+          </a>
+        </ion-card-content>
+      </ion-card>
+    </section>
 
-  <section class="recommended">
-    <ion-card class="recommended-card">
-      <ion-card-header>
-        <ion-card-title>Comidas Recomendadas</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <p>Descubre nuestras recomendaciones de comidas basadas en tus preferencias. ¡No te las pierdas!</p>
-      </ion-card-content>
-    </ion-card>
-  </section>
+    <section class="recommended" *ngIf="recommendedRecipes && recommendedRecipes.length > 0">
+      <ion-card class="recommended-card">
+        <ion-card-header>
+          <ion-card-title>Comidas Recomendadas</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-grid>
+            <ion-row>
+              <ion-col size="12" size-md="6" size-lg="4" *ngFor="let rec of recommendedRecipes | slice:0:10">
+                <ion-card>
+                  <img [src]="rec.strMealThumb" alt="{{ rec.strMeal }}" class="recommended-img">
+                  <ion-card-header>
+                    <ion-card-title>{{ rec.strMeal }}</ion-card-title>
+                  </ion-card-header>
+                </ion-card>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card-content>
+      </ion-card>
+    </section>
+  </div>
 </ion-content>

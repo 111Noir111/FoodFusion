@@ -7,11 +7,16 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = `${environment.APIs.mealDb}random.php`;
+  private apiUrlRandom = `${environment.APIs.mealDb}random.php`;
+  private apiUrlPopular = `${environment.APIs.mealDb}search.php?s=`; // Cambia a la URL correcta si existe
 
   constructor(private http: HttpClient) {}
 
   getRandomRecipe(): Observable<any> {
-    return this.http.get<any>(this.apiUrl);
+    return this.http.get<any>(this.apiUrlRandom);
+  }
+
+  getRecommendedRecipes(): Observable<any> {
+    return this.http.get<any>(this.apiUrlPopular); // Usa el endpoint correcto
   }
 }
